@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 const Home = () => {
     const [username, setUsername] = useState('');
@@ -21,7 +22,7 @@ const Home = () => {
             <h2>Create Account</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Username:</label>
+                    <label>Username: </label>
                     <input
                         type="text"
                         value={username}
@@ -30,7 +31,7 @@ const Home = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Email:</label>
+                    <label>Email: </label>
                     <input
                         type="email"
                         value={email}
@@ -39,7 +40,7 @@ const Home = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Password:</label>
+                    <label>Password: </label>
                     <input
                         type="password"
                         value={password}
@@ -48,7 +49,7 @@ const Home = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Confirm Password:</label>
+                    <label>Confirm Password: </label>
                     <input
                         type="password"
                         value={confirmPassword}
