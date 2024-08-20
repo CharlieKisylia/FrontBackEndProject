@@ -1,17 +1,27 @@
 package com.example;
 
+import static spark.Spark.*;
+
 public class App {
     public static void main(String[] args) {
-        UserDAO userDAO = new UserDAO();
-        User user = userDAO.getUserByUsername("john_doe");
+        port(4567); // Port number for your server
+        
+        post("/register", (req, res) -> {
+            // Extract user data from request
+            String username = req.queryParams("username");
+            String password = req.queryParams("password");
+            String email = req.queryParams("email");
 
-        if (user != null) {
-            System.out.println("Username: " + user.getUsername());
-            System.out.println("Email: " + user.getEmail());
-            System.out.println("Wins: " + user.getWins());
-            System.out.println("Losses: " + user.getLosses());
-        } else {
-            System.out.println("User not found.");
-        }
+            // Create a new user in the database
+            UserDAO userDAO = new UserDAO();
+            boolean result = userDAO.createUser(username, password, email);
+
+            if (result) {
+                return "User registered successfully";
+            } else {
+                res.status(500);
+                return "User registration failed";
+            }
+        });
     }
 }
