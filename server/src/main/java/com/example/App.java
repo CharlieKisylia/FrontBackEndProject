@@ -4,15 +4,16 @@ import static spark.Spark.*;
 
 public class App {
     public static void main(String[] args) {
-        port(4567); // Port number for your server
-        
+        port(4567);
+
+        // Initialize the database
+        DBInitializer.initialize();
+
         post("/register", (req, res) -> {
-            // Extract user data from request
             String username = req.queryParams("username");
             String password = req.queryParams("password");
             String email = req.queryParams("email");
 
-            // Create a new user in the database
             UserDAO userDAO = new UserDAO();
             boolean result = userDAO.createUser(username, password, email);
 
