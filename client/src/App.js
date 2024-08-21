@@ -13,8 +13,25 @@ const Home = () => {
             alert("Passwords do not match!");
             return;
         }
-        // Handle the form submission logic here, such as making an API call to the backend.
-        console.log("Account created for:", { username, email });
+    
+        // Fetch API to send a POST request to the backend
+        fetch('http://localhost:4567/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                username: username,
+                password: password,
+                email: email
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            alert(data.message);
+        })
+        .catch(error => console.error("Error:", error));
     };
 
     return (
