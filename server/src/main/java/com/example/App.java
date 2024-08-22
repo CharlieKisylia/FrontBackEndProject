@@ -1,11 +1,13 @@
 package com.example;
 
+import com.google.gson.Gson;
+import spark.Request;
+import spark.Response;
 import static spark.Spark.*;
 
-import com.example.DBInitializer;
-import com.example.UserDAO;
-
 public class App {
+    private static final Gson gson = new Gson(); // Gson for JSON handling
+
     public static void main(String[] args) {
         port(4567);
 
@@ -15,22 +17,22 @@ public class App {
         // Initialize the database
         DBInitializer.initialize();
 
-        post("/register", (req, res) -> {
-            String username = req.queryParams("username");
-            String password = req.queryParams("password");
-            String email = req.queryParams("email");
+        post("/register", (Request req, Response res) -> {
+            // Parse JSON request body
+            User user = gson.fromJson(req.body(), User.class);
 
-            // Log the received parameters
-            System.out.println("Received: " + username + ", " + password + ", " + email);
+            // Log the received user data
+            System.out.println("Received: " + user.getUsername() + ", " + user.getPassword() + ", " + user.getEmail());
 
             UserDAO userDAO = new UserDAO();
-            boolean result = userDAO.createUser(username, password, email);
+            boolean result = userDAO.createUser(user.getUsername(), user.getPassword(), user.getEmail());
 
+            res.type("application/json");
             if (result) {
-                return "{\"message\":\"User registered successfully\"}";
+                return gson.toJson(new ResponseMessage("User registered successfully"));
             } else {
                 res.status(500);
-                return "{\"message\":\"User registration failed\"}";
+                return gson.toJson(new ResponseMessage("User registration failed"));
             }
         });
     }
@@ -58,5 +60,22 @@ public class App {
             // Optional: Allow credentials to be included
             response.header("Access-Control-Allow-Credentials", "true");
         });
+    }
+}
+
+// Define ResponseMessage class for responses
+class ResponseMessage {
+    private String message;
+
+    public ResponseMessage(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
