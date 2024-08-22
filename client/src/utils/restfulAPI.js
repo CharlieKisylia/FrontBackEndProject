@@ -5,9 +5,9 @@ export const createAccount = async (username, email, password) => {
         const response = await fetch('http://localhost:4567/register', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json', // Set content type to JSON
             },
-            body: new URLSearchParams({
+            body: JSON.stringify({ // Convert data to JSON
                 username: username,
                 email: email,
                 password: password
