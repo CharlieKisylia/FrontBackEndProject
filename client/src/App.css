@@ -37,10 +37,17 @@
   }
 }
 
-.create-account-container {
+.auth-container {
+  display: flex;
+  justify-content: center; /* Center the containers horizontally */
+  gap: 20px; /* Add space between the containers */
+  margin-top: 20px;
+}
+
+.create-account-container,
+.login-container {
   text-align: center;
-  max-width: 400px; 
-  margin: 0 auto; 
+  width: 400px; 
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -49,4 +56,23 @@
 
 .form-group {
   padding: 10px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set background color for the entire page */
+body {
+  background-color: rgb(186, 185, 185);
+}
+
+/* Ensure the App component fills the entire viewport */
+.App {
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
