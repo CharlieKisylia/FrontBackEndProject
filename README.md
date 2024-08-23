@@ -10,3 +10,9 @@ Run frontend in the client/ directory: "npm start"  <br>
 
 **Why this project?**  <br/>
 The purpose of this project is to show I am capable of working on both/either the Frontend and Backend, have knowledge in working with databases, react, and Java in a Software Engineering setting.
+
+
+**Completed**  <br/>
+* ***Create Account works to add user to the database***  <br/>
+* ***Login implemented on the frontend***  <br/>
+* ***Database is successfully implemented using SQLite***  </br>
