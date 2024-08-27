@@ -1,11 +1,13 @@
-**Link**: Not Yet Available  <br/><br/>
+**Link**: Not Yet Available. View images below  <br/><br/>
 
 
 **To run the code**  <br/>
 Run backend in the server/ directory : First run "mvn compile" to compile then "mvn exec:java" to run in terminal  <br/>
 &emsp; The Backend uses: JDK, Maven, and SQLite  <br>
+&emsp;&emsp; I am using Apache Maven 3.9.9, Java version: 17.0.4.1, sqlite3: 3.39.5(Check pom.xml in server for other dependencies)  <br>
 Run frontend in the client/ directory: "npm start"  <br>
 &emsp; The frontend uses: Node.js and npm
+&emsp;&emsp; I am using Node.js version v20.17.0, npm version: 10.8.2  <br>
 
 
 **Why this project?**  <br/>
