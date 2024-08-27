@@ -1,27 +1,25 @@
 package com.example;
 
 import com.google.gson.Gson;
+
+import com.google.gson.Gson;
 import spark.Request;
 import spark.Response;
 import static spark.Spark.*;
 
 public class App {
-    private static final Gson gson = new Gson(); // Gson for JSON handling
+    private static final Gson gson = new Gson(); 
 
     public static void main(String[] args) {
         port(4567);
 
-        // Enable CORS
         enableCORS("*", "*", "*");
 
-        // Initialize the database
         DBInitializer.initialize();
 
         post("/register", (Request req, Response res) -> {
-            // Parse JSON request body
             User user = gson.fromJson(req.body(), User.class);
 
-            // Log the received user data
             System.out.println("Received: " + user.getUsername() + ", " + user.getPassword() + ", " + user.getEmail());
 
             UserDAO userDAO = new UserDAO();
@@ -35,9 +33,22 @@ public class App {
                 return gson.toJson(new ResponseMessage("User registration failed"));
             }
         });
+
+        post("/login", (Request req, Response res) -> {
+            User loginAttempt = gson.fromJson(req.body(), User.class);
+            UserDAO userDAO = new UserDAO();
+            boolean isValid = userDAO.validateUser(loginAttempt.getUsername(), loginAttempt.getPassword());
+        
+            res.type("application/json");
+            if (isValid) {
+                return gson.toJson(new ResponseMessage("Login successful"));
+            } else {
+                res.status(401);
+                return gson.toJson(new ResponseMessage("Invalid username or password"));
+            }
+        });
     }
 
-    // Method to configure CORS
     private static void enableCORS(final String origin, final String methods, final String headers) {
         options("/*", (request, response) -> {
             String accessControlRequestHeaders = request.headers("Access-Control-Request-Headers");
@@ -57,13 +68,11 @@ public class App {
             response.header("Access-Control-Allow-Origin", origin);
             response.header("Access-Control-Request-Method", methods);
             response.header("Access-Control-Allow-Headers", headers);
-            // Optional: Allow credentials to be included
             response.header("Access-Control-Allow-Credentials", "true");
         });
     }
 }
 
-// Define ResponseMessage class for responses
 class ResponseMessage {
     private String message;
 

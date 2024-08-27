@@ -5,17 +5,14 @@ public class User {
     private String password;
     private String email;
 
-    // Default constructor
     public User() {}
 
-    // Constructor with parameters
     public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
     }
 
-    // Getter and Setter methods
     public String getUsername() {
         return username;
     }

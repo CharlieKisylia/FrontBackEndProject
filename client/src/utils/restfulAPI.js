@@ -33,10 +33,18 @@ export const loginUser = async (username, password) => {
                 password
             })
         });
+
+        if (!response.ok) {
+            // Check response text if it's an error message
+            const errorText = await response.text();
+            console.error('Server responded with an error:', errorText);
+            throw new Error('Network response was not ok');
+        }
+
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error("Error:", error);
+        console.error('Error:', error);
         throw error;
     }
 };

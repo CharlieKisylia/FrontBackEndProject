@@ -1,6 +1,8 @@
+// src/Home.js
 import React, { useState } from 'react';
-import './App.css';
-import { createAccount, loginUser } from './utils/restfulAPI'; // Import the function
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import './css/App.css';
+import { createAccount, loginUser } from './utils/restfulAPI';
 
 const Home = () => {
     const [username, setUsername] = useState('');
@@ -9,6 +11,7 @@ const Home = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [loginUsername, setLoginUsername] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleCreateAccountSubmit = async (e) => {
         e.preventDefault();
@@ -21,24 +24,28 @@ const Home = () => {
             const data = await createAccount(username, email, password);
             console.log(data);
             alert(data.message);
+            if (data.message === "User registered successfully") {
+                navigate(`/welcome/${username}`); // Redirect to welcome page
+            }
         } catch (error) {
             alert("An error occurred. Please try again.");
         }
     };
 
     const handleLoginSubmit = async (e) => {
-        e.preventDefault();
-        
+        e.preventDefault(); // Prevent default form submission
         try {
             const data = await loginUser(loginUsername, loginPassword);
-            console.log(data);
-            alert(data.message);
+            console.log('Login successful:', data);
+            alert("Login Successful");
+            if (data.message === "Login successful") {
+                navigate(`/welcome/${loginUsername}`); // Redirect to welcome page
+            }
         } catch (error) {
-            alert("An error occurred. Please try again.");
+            console.error('Login failed:', error);
+            alert("Login not Successful");
         }
     };
-
-
 
     return (
         <div className="auth-container">
