@@ -3,23 +3,22 @@
 const getAPIBaseURL = () => {
     const hostname = window.location.hostname;
 
-    // Log the hostname for debugging
     console.log(`Hostname: ${hostname}`);
 
     if (hostname.includes('github.dev')) {
-        // For GitHub Codespaces, use the fixed backend port
+        
+        // For GitHub Codespaces
         const apiHostname = hostname.replace('3000', '4567');
         return `https://${apiHostname}/`;
     } else if (hostname === 'localhost' || hostname === '127.0.0.1') {
-        // For local development, use localhost with backend port
+        // For local
         return 'http://localhost:4567';
     } else {
-        // For other environments, use the hostname with backend port
+        // For other environments maybe???
         return `https://${hostname}:4567`;
     }
 };
 
-// Declare the API base URL variable
 const API_BASE_URL = getAPIBaseURL();
 console.log(`API Base URL: ${API_BASE_URL}`);
 
