@@ -23,5 +23,7 @@ The purpose of this project is to show I am capable of working on both/either th
 
 * ***Database is successfully implemented using SQLite***  </br>
 
-![Image 8-27-24 at 9 12 AM](https://github.com/user-attachments/assets/395311b2-bd2d-454e-a1b4-cfdbe23098b9)
+
+* ***Rock Paper Scissors implemented on Frontend. Still need to connect to Database to keep track of all time record vs the computer.***  <br/>
+<img width="1345" alt="Screenshot 2024-08-28 at 8 31 18 AM" src="https://github.com/user-attachments/assets/bb52fd1c-5f8a-4e01-9351-d8a2d7342945">
 
