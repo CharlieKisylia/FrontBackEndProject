@@ -8,7 +8,8 @@ const getAPIBaseURL = () => {
 
     if (hostname.includes('github.dev')) {
         // For GitHub Codespaces, use the fixed backend port
-        return 'https://scaling-winner-p949gjgggvxf7g7j-4567.app.github.dev';
+        const apiHostname = hostname.replace('3000', '4567');
+        return `https://${apiHostname}/`;
     } else if (hostname === 'localhost' || hostname === '127.0.0.1') {
         // For local development, use localhost with backend port
         return 'http://localhost:4567';
