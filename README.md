@@ -1,7 +1,20 @@
-**Link**: Not Yet Available. View images below  <br/><br/>
+**Link**: Not Yet Available. View images below  <br/><br/><br/>
+
+**TO RUN ON GITHUB CODESPACES YOU CAN FOLLOW THE STEPS BELOW**:  <br/><br/>
+
+1* ***Go to Code on Homepage and under Codespaces you should see "cautious couscous" - click the name to be directed to the code***  <br/>
+2* ***It may need to install npm for you, I am not sure. Either way you will open two terminals down below(If terminal is not showing, look at image below. You will click the 2nd box to the left to open a terminal. These boxes are in the upper right corner of the page.)***  <br/>
+<img width="256" alt="Screenshot 2024-08-28 at 3 38 57 PM" src="https://github.com/user-attachments/assets/e72f7181-1857-4a06-92c1-e60afc9e993e"> <br/>
+3* ***Once you have the terminal showing below, click the "+" button so that there are two terminals.***  <br/>
+4* ***In one of them type "cd server" to enter the server directory. And in the other terminal, type "cd client" to enter the client directory***  <br/>
+5* ***In the terminal that is located in the client folder, type "npm start" and make sure to click "make public" in the bottom right of the terminal when the popup comes up(This is essential or else you will not be able to login or create an account. I will fix soon.(08/28)***  <br/>
+&emsp;&emsp;* ***If "npm start" doesn't run, type "npm install" then run "npm start" again***  <br/>
+6* ***In the terminal that is located in the server folder, type "mvn exec:java" to get the server running. Again, make sure to click "make public" in the bottom right of the terminal when the popup comes up(This is essential or else you will not be able to login or create an account. I will fix soon.(08/28)*** <br/>
+&emsp;&emsp;* ***If "mvn exec:java" doesn't run, type "mvn compile" then run ""mvn exec:java" again***  <br/>
+&emsp;&emsp;* ***If both seem to be running but you can not create an account or login, check the ports tab next to the terminal tab to make sure both visibility's are set to public***  <br/>
 
 
-**To run the code**  <br/>
+**To run the code locally(May be more difficult to set up so maybe just use Github Codespaces or look at the pictures!)**  <br/>
 Run backend in the server/ directory : First run "mvn compile" to compile then "mvn exec:java" to run in terminal  <br/>
 &emsp; The Backend uses: JDK, Maven, and SQLite  <br>
 &emsp;&emsp; I am using Apache Maven 3.9.9, Java version: 17.0.4.1, sqlite3: 3.39.5(Check pom.xml in server for other dependencies)  <br>
