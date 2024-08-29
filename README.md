@@ -11,7 +11,7 @@
 &emsp;&emsp;* ***If "npm start" doesn't run, type "npm install" then run "npm start" again***  <br/>
 6* ***In the terminal that is located in the server folder, type "mvn exec:java" to get the server running. Again, make sure to click "make public" in the bottom right of the terminal when the popup comes up(This is essential or else you will not be able to login or create an account. I will fix soon.(08/28)*** <br/>
 &emsp;&emsp;* ***If "mvn exec:java" doesn't run, type "mvn compile" then run ""mvn exec:java" again***  <br/>
-&emsp;&emsp;* ***If both seem to be running but you can not create an account or login, check the ports tab next to the terminal tab to make sure both visibility's are set to public***  <br/>
+&emsp;&emsp;* ***If both seem to be running but you can not create an account or login, check the ports tab next to the terminal tab to make sure both visibility's are set to public If they aren't, double click on the port to change visibility to public.***  <br/>
 
 
 **To run the code locally(May be more difficult to set up so maybe just use Github Codespaces or look at the pictures!)**  <br/>
