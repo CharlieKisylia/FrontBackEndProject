@@ -1,6 +1,7 @@
 com/example/DB.class
 com/example/App.class
-com/example/DBInitializer.class
-com/example/UserDAO.class
 com/example/User.class
 com/example/ResponseMessage.class
+com/example/DBInitializer.class
+com/example/UserDAO.class
+com/example/UserRoutes.class
