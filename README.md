@@ -2,7 +2,7 @@
 
 **TO RUN ON GITHUB CODESPACES YOU CAN FOLLOW THE STEPS BELOW**:  <br/><br/>
 
-1* ***Go to Code on Homepage and under Codespaces you should see "cautious couscous" - click the name to be directed to the code***  <br/>
+1* ***Go to Code on Homepage and under Codespaces you should see "supreme tribble" - click the name to be directed to the code***  <br/>
 2* ***It may need to install npm for you, I am not sure. Either way you will open two terminals down below(If terminal is not showing, look at image below. You will click the 2nd box to the left to open a terminal. These boxes are in the upper right corner of the page.)***  <br/>
 <img width="256" alt="Screenshot 2024-08-28 at 3 38 57 PM" src="https://github.com/user-attachments/assets/e72f7181-1857-4a06-92c1-e60afc9e993e"> <br/>
 3* ***Once you have the terminal showing below, click the "+" button so that there are two terminals.***  <br/>
@@ -11,7 +11,7 @@
 &emsp;&emsp;* ***If "npm start" doesn't run, type "npm install" then run "npm start" again***  <br/>
 6* ***In the terminal that is located in the server folder, type "mvn exec:java" to get the server running. Again, make sure to click "make public" in the bottom right of the terminal when the popup comes up(This is essential or else you will not be able to login or create an account. I will fix soon.(08/28)*** <br/>
 &emsp;&emsp;* ***If "mvn exec:java" doesn't run, type "mvn compile" then run ""mvn exec:java" again***  <br/>
-&emsp;&emsp;* ***If both seem to be running but you can not create an account or login, check the ports tab next to the terminal tab to make sure servers visibility's is set to public(the port labelled 4567), right click on the port to change visibility to public.***  <br/>
+&emsp;&emsp;* ***If both seem to be running but you can not create an account or login, check the ports tab next to the terminal tab to make sure servers visibility's is set to public(the port labelled 4567), right click on the port to change visibility to public.***  <br/><br/><br/>
 
 
 **To run the code locally(May be more difficult to set up so maybe just use Github Codespaces or look at the pictures!)**  <br/>
@@ -36,7 +36,7 @@ The purpose of this project is to show I am capable of working on both/either th
 
 * ***Database is successfully implemented using SQLite***  </br>
 
+* ***Rock Paper Scissors implemented on Frontend. Record is maintained in database.***  <br/>
+<img width="1374" alt="Screenshot 2024-09-03 at 9 48 59 AM" src="https://github.com/user-attachments/assets/5537e729-cb03-4056-a314-1f6d88ba4369">
 
-* ***Rock Paper Scissors implemented on Frontend. Still need to connect to Database to keep track of all time record vs the computer.***  <br/>
-<img width="1345" alt="Screenshot 2024-08-28 at 8 31 18 AM" src="https://github.com/user-attachments/assets/bb52fd1c-5f8a-4e01-9351-d8a2d7342945">
 
