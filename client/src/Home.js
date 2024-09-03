@@ -22,7 +22,6 @@ const Home = () => {
     
         try {
             const data = await createAccount(username, email, password);
-            console.log(data);
             alert(data.message);
             if (data.message === "User registered successfully") {
                 navigate(`/welcome/${username}`); // Redirect to welcome page
@@ -36,8 +35,6 @@ const Home = () => {
         e.preventDefault(); // Prevent default form submission
         try {
             const data = await loginUser(loginUsername, loginPassword);
-            console.log('Login successful:', data);
-            alert("Login Successful");
             if (data.message === "Login successful") {
                 navigate(`/welcome/${loginUsername}`); // Redirect to welcome page
             }

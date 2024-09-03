@@ -1,5 +1,6 @@
+// RockPaperScissors.js
 import React, { useState } from 'react';
-import { updateRecord } from './utils/restfulAPI'; // Import the updateRecord function
+import { updateRecord } from './utils/restfulAPI';
 
 const choices = ['rock', 'paper', 'scissors'];
 
@@ -7,6 +8,8 @@ const RockPaperScissors = ({ username }) => {
     const [userChoice, setUserChoice] = useState('');
     const [computerChoice, setComputerChoice] = useState('');
     const [result, setResult] = useState('');
+    const [wins, setWins] = useState(0);
+    const [losses, setLosses] = useState(0);
 
     const getComputerChoice = () => {
         const randomIndex = Math.floor(Math.random() * choices.length);
@@ -31,14 +34,23 @@ const RockPaperScissors = ({ username }) => {
         setUserChoice(choice);
         setComputerChoice(computerChoice);
         setResult(gameResult);
+    
 
-        // Update the database based on the game result
+        if (gameResult === 'draw') {
+            // Do nothing if it's a draw
+            return;
+        }
+    
         try {
-            await updateRecord(username, gameResult);
+            const { wins, losses } = await updateRecord(username, gameResult);
+            setWins(wins);
+            setLosses(losses);
         } catch (error) {
-            console.error("Failed to update record:", error);
+            console.error('Failed to update record:', error);
+            alert('Failed to update record. Please check the console for details.');
         }
     };
+    
 
     return (
         <div className="rps-game-container">
@@ -54,6 +66,7 @@ const RockPaperScissors = ({ username }) => {
                 <p>Your choice: {userChoice}</p>
                 <p>Computer's choice: {computerChoice}</p>
                 <p>Result: {result}</p>
+                <p>Total Wins: {wins} | Total Losses: {losses}</p>
             </div>
         </div>
     );

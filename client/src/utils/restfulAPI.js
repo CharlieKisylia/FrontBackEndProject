@@ -6,7 +6,7 @@ const getAPIBaseURL = () => {
     console.log(`Hostname: ${hostname}`);
 
     if (hostname.includes('github.dev')) {
-        
+
         // For GitHub Codespaces
         const apiHostname = hostname.replace('3000', '4567');
         return `https://${apiHostname}/`;
@@ -70,29 +70,22 @@ export const loginUser = async (username, password) => {
     }
 };
 
-export const updateRecord = async (username, result) => {
+export async function updateRecord(username, result) {
     try {
         const response = await fetch(`${API_BASE_URL}/updateRecord`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username: username,
-                result: result
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, result })
         });
 
         if (!response.ok) {
             const errorText = await response.text();
-            console.error('Server responded with an error:', errorText);
-            throw new Error('Network response was not ok');
+            throw new Error(`Server responded with status ${response.status}: ${errorText}`);
         }
 
-        const data = await response.json();
-        return data;
+        return await response.json();
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Failed to update record:', error);
         throw error;
     }
-};
+}
