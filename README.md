@@ -37,6 +37,7 @@ The purpose of this project is to show I am capable of working on both/either th
 * ***Database is successfully implemented using SQLite***  </br>
 
 * ***Rock Paper Scissors implemented on Frontend. Record is maintained in database.***  <br/>
-<img width="1374" alt="Screenshot 2024-09-03 at 9 48 59 AM" src="https://github.com/user-attachments/assets/5537e729-cb03-4056-a314-1f6d88ba4369">
+<img width="1374" alt="Screenshot 2024-09-04 at 8 01 33 AM" src="https://github.com/user-attachments/assets/2216cec6-a2ac-4128-9fdc-4dbb690de9a0">
+
 
 
