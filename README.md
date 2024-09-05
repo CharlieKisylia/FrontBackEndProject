@@ -36,8 +36,9 @@ The purpose of this project is to show I am capable of working on both/either th
 
 * ***Database is successfully implemented using SQLite***  </br>
 
-* ***Rock Paper Scissors implemented on Frontend. Record is maintained in database.***  <br/>
-<img width="1374" alt="Screenshot 2024-09-04 at 8 01 33 AM" src="https://github.com/user-attachments/assets/2216cec6-a2ac-4128-9fdc-4dbb690de9a0">
+* ***Rock Paper Scissors implemented on Frontend. Record is maintained in database. Adding to nav bar and working on Tic Tac Toe***  <br/>
+<img width="1427" alt="Screenshot 2024-09-05 at 11 04 52 AM" src="https://github.com/user-attachments/assets/4f376a43-0052-4e02-820d-0c92520e0ff9">
+
 
 
 
