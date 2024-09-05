@@ -1,0 +1,27 @@
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.navbar button:hover {
+    background-color: #575757;
+}

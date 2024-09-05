@@ -1,23 +1,31 @@
-// src/Welcome.js
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import './css/Welcome.css';
-import RockPaperScissors from './RockPaperScissors';
+import React, { useState } from 'react';
+import NavBar from './NavBar'; // Import the NavBar component
+import RockPaperScissors from './RockPaperScissors'; // Import the RockPaperScissors component
+import TicTacToe from './TicTacToe'; // Import the TicTacToe component
+import './css/Welcome.css'; // Import the CSS
 
 const Welcome = () => {
-    const { username } = useParams();
+  const [selectedGame, setSelectedGame] = useState('RockPaperScissors'); // Default to RockPaperScissors
+  const username = 'charliek'; // Set username here or retrieve it from a higher-level component/context
 
-    return (
-        <div className="welcome-container">
-            <div className="username-container">
-                <h1>Hello {username}</h1>
-            </div>
-            <div className="game-container">
-                <RockPaperScissors username={username} />
-            </div>
+  const handleGameChange = (game) => {
+    setSelectedGame(game);
+  };
+
+  return (
+    <>
+      <div className="welcome-page">
+        <div className="username-container">
+            Hello {username}
         </div>
-        
-    );
+        <NavBar onGameChange={handleGameChange} />
+        <div className="game-content">
+          {selectedGame === 'RockPaperScissors' && <RockPaperScissors username={username} />}
+          {selectedGame === 'TicTacToe' && <TicTacToe username={username} />}
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Welcome;

@@ -12,7 +12,7 @@
 
 .choices-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Adjust spacing between buttons */
     margin-top: 20px;
 }
 
@@ -23,6 +23,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
+    margin: 0 10px; /* Add margin to create space between buttons */
 }
 
 .choice-button:hover {
@@ -32,6 +33,10 @@
 
 .choice-button:active {
     transform: scale(0.95);
+}
+
+.results-container {
+    margin-top: 20px;
 }
 
 .result {
