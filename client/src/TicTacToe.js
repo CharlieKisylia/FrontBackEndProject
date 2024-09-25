@@ -12,7 +12,7 @@ const TicTacToe = () => {
                 const newBoard = [...board];
                 newBoard[aiMove] = 'O';
                 setBoard(newBoard);
-                setXIsNext(true); 
+                setXIsNext(true);
             }
         }
     }, [xIsNext, board]);
@@ -23,9 +23,9 @@ const TicTacToe = () => {
         }
 
         const newBoard = [...board];
-        newBoard[index] = 'X'; // Player's move
+        newBoard[index] = 'X';
         setBoard(newBoard);
-        setXIsNext(false); 
+        setXIsNext(false);
     };
 
     const checkWinner = (board) => {
@@ -48,6 +48,20 @@ const TicTacToe = () => {
         return null;
     };
 
+    const makeAiMove = (board) => {
+        let availableMoves = board
+            .map((square, idx) => square === null ? idx : null)
+            .filter(v => v !== null);
+        if (availableMoves.length === 0) return null;
+        return availableMoves[Math.floor(Math.random() * availableMoves.length)];
+    };
+
+    // Function to reset the game
+    const resetGame = () => {
+        setBoard(Array(9).fill(null)); // Reset board
+        setXIsNext(true); // X starts again
+    };
+
     const renderSquare = (index) => {
         return (
             <button className="square" onClick={() => handleClick(index)}>
@@ -66,14 +80,6 @@ const TicTacToe = () => {
         );
     };
 
-    const makeAiMove = (board) => {
-        let availableMoves = board
-            .map((square, idx) => square === null ? idx : null)
-            .filter(v => v !== null);
-        if (availableMoves.length === 0) return null; 
-        return availableMoves[Math.floor(Math.random() * availableMoves.length)];
-    };
-
     const winner = checkWinner(board);
     return (
         <div>
@@ -84,6 +90,8 @@ const TicTacToe = () => {
                 {renderRow(1)}
                 {renderRow(2)}
             </div>
+            {/* Add Play Again button */}
+            <button className="play-again-button" onClick={resetGame}>Play Again</button>
         </div>
     );
 };
