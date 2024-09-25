@@ -2,7 +2,7 @@
 
 **TO RUN ON GITHUB CODESPACES YOU CAN FOLLOW THE STEPS BELOW**:  <br/><br/>
 
-1* ***Go to Code on Homepage and under Codespaces you should see "supreme tribble" - click the name to be directed to the code***  <br/>
+1* ***Go to Code on Homepage and under Codespaces you should see "urban bassoon" - click the name to be directed to the code***  <br/>
 2* ***It may need to install npm for you, I am not sure. Either way you will open two terminals down below(If terminal is not showing, look at image below. You will click the 2nd box to the left to open a terminal. These boxes are in the upper right corner of the page.)***  <br/>
 <img width="256" alt="Screenshot 2024-08-28 at 3 38 57 PM" src="https://github.com/user-attachments/assets/e72f7181-1857-4a06-92c1-e60afc9e993e"> <br/>
 3* ***Once you have the terminal showing below, click the "+" button so that there are two terminals.***  <br/>
@@ -36,8 +36,13 @@ The purpose of this project is to show I am capable of working on both/either th
 
 * ***Database is successfully implemented using SQLite***  </br>
 
-* ***Rock Paper Scissors implemented on Frontend. Record is maintained in database. Adding to nav bar and working on Tic Tac Toe***  <br/>
-<img width="1427" alt="Screenshot 2024-09-05 at 11 04 52 AM" src="https://github.com/user-attachments/assets/4f376a43-0052-4e02-820d-0c92520e0ff9">
+* ***Rock Paper Scissors implemented on Frontend. Record is maintained in database.***  <br/>
+![Image 9-25-24 at 12 54 PM](https://github.com/user-attachments/assets/6b86bb98-b4cf-423f-8eee-d8818c221052)
+
+* ***Added nav bar and Tic Tac Toe against computer***  </br>
+![Image 9-25-24 at 12 54 PM (1)](https://github.com/user-attachments/assets/2cf1e9da-10f5-4fca-bb0c-57837a1216e2)
+
+
 
 
 
